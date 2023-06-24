@@ -5,6 +5,6 @@
 3) Every blog post should have at least one thumbnail image.
 
 **Note:**
-a. Should have all the CRUD operation
-b. Exception should be handled in all methods
-c. Use MySql for database connection (i.e. Use query to perform CRUD operation)
+1) Should have all the CRUD operation
+2) Exception should be handled in all methods
+3) Use MySql for database connection (i.e. Use query to perform CRUD operation)
