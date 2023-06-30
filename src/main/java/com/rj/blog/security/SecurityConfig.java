@@ -1,6 +1,5 @@
 package com.rj.blog.security;
 
-
 import com.rj.blog.jwt.JwtAuthFilter;
 import com.rj.blog.serviceimpl.UserDetailsServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,19 +19,27 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.SecurityFilterChain;
 import org.springframework.security.web.authentication.logout.LogoutFilter;
-
 @Configuration
 @EnableMethodSecurity
 @EnableWebSecurity
+
 public class SecurityConfig {
     @Autowired
     private JwtAuthFilter jwtAuthFilter;
-
     private static final String[] AUTH_WHITELIST = {
             "/api/v1/auth/**",
             "/api/v1/test/no_auth",
             "/h2-console/**",
-            "/error"
+            "/error",
+            "/swagger-ui/**",
+            "/swagger-ui.html",
+            "/v2/api-docs",
+            "/v3/api-docs/**",
+            "/swagger-resources/",
+            "/swagger-resources/**",
+            "/configuration/ui",
+            "/configuration/security",
+            "/webjars/**"
     };
 
     @Bean
